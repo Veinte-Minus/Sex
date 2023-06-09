@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+struct s{
+int country;
+int num;
+int score;
+};
+
+int main(){
+  int n,t,i=0,st=2,Max=0;
+  s stu[101],rew[2];
+  scanf("%d",&n);
+  i = n;
+  t = n;
+  while(n){
+    scanf("%d %d %d",&stu[i].country,&stu[i].num,&stu[i].score);
+    n--;
+  }
+  n = 3;
+  while(n){  
+    for(i=t;i>0;i--){
+      if(stu[i].score < stu[i-1].score){
+        Max = i;
+      }
+    }
+    rew[st] = {stu[Max].country,stu[Max].num,stu[Max].score};
+    st--,n--;
+    stu[Max] = {0,0,0};
+    if(rew[0].country == rew[1].country == rew[2].country) continue;
+  }
+  n = 3;
+  while(n){
+    printf("%d %d\n",rew[n-1].country,rew[n-1].num);
+    n--;
+  }
+}
