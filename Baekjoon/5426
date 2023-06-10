@@ -1,4 +1,26 @@
 // https://www.acmicpc.net/problem/5426
 
 #include <stdio.h>
-int letter[]
+#include <math.h>
+#include <string.h>
+int main()
+{
+  char letter[10001]={};
+  int i,j,r,h,n;
+  scanf("%d",&r);
+  while(r)
+  {
+    scanf("%s",letter);
+    n = sqrt(strlen(letter));
+    for(i=n-1;i>=0;i--)
+    {
+        h=i;
+        for(j=n;j>0;j--)
+        {
+            printf("%c",letter[h]);
+            h+=n;
+        }
+    }
+    r--;
+  }
+}
