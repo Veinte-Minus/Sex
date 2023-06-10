@@ -1,1 +1,4 @@
+// https://www.acmicpc.net/problem/5426
 
+#include <stdio.h>
+int letter[]
