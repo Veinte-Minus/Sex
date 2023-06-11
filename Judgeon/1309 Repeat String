@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(){
+	char rev[11];
+	int i=0,s=0;
+	scanf("%s %d",rev, &i);
+	for(i=i;i>0;i--){
+		fputs(rev, stdout);
+	}
+}
