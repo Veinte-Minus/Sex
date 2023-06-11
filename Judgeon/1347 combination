@@ -1,0 +1,20 @@
+#include <stdio.h>
+long long combi[60][60];
+long long combination(int n, int r);
+
+int main(){
+  int n,r;
+  scanf("%d %d",&n,&r);
+  long long ans = combination(n,r);
+  printf("%lld",ans);
+}
+
+long long combination(int n, int r){
+  if(n==r||r==0||n==0) return 1;
+  if(combi[n][r]==0){
+    combi[n][r] = combination(n-1,r-1) + combination(n-1,r);
+    return combi[n][r];
+  }else{
+    return combi[n][r];
+  }
+}
